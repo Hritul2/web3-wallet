@@ -13,10 +13,10 @@ import {
 import { TrashIcon } from "@radix-ui/react-icons";
 import { useSetRecoilState } from "recoil";
 import { mnemonicAtom } from "@/store/atoms";
-import { useToast } from "@/hooks/use-toast";
+// import { useToast } from "@/hooks/use-toast";
 
 const ClearSeed = () => {
-  const { toast } = useToast();
+  // const { toast } = useToast();
   const setMnemonic = useSetRecoilState(mnemonicAtom);
 
   return (

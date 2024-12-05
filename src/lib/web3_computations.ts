@@ -1,7 +1,7 @@
 import nacl from "tweetnacl";
 import { generateMnemonic, mnemonicToSeedSync, validateMnemonic } from "bip39";
 import { derivePath } from "ed25519-hd-key";
-import { Keypair, PublicKey } from "@solana/web3.js";
+import { Keypair } from "@solana/web3.js";
 import bs58 from "bs58";
 import { Wallet, HDNodeWallet } from "ethers";
 import { MnemonicType } from "@/types/types";

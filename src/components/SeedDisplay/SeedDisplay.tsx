@@ -11,7 +11,7 @@ import {
 import { Button } from "../ui/button";
 import { EyeClosedIcon, EyeOpenIcon, CopyIcon } from "@radix-ui/react-icons";
 import { useToast } from "@/hooks/use-toast";
-import { useRecoilState } from "recoil";
+import { useRecoilValue } from "recoil";
 import { mnemonicAtom } from "@/store/atoms";
 import OneWord from "./OneWord";
 import ClearSeed from "./ClearSeed";
@@ -19,7 +19,8 @@ import GotoWalletButton from "./GotoWalletButton";
 
 const SeedDisplay = () => {
   const [eyeOpen, setEyeOpen] = useState(false);
-  const [mnemonic, setMnemonic] = useRecoilState(mnemonicAtom);
+  // const [mnemonic, setMnemonic] = useRecoilState(mnemonicAtom);
+  const mnemonic = useRecoilValue(mnemonicAtom);
   const mnemonicWords = mnemonic.split(" ");
   const { toast } = useToast();
 

@@ -25,7 +25,7 @@ const walletTypeZ = z.object({
 });
 
 // Inferred TypeScript type for walletTypeZ schema
-type WalletType = z.infer<typeof walletTypeZ>;
+export type WalletType = z.infer<typeof walletTypeZ>;
 
 // Schema for an array of wallets
 const walletArrayZ = z.array(walletTypeZ);
