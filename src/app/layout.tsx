@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/toaster";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
+import Provider from "@/provider/provider";
 const nunito = Nunito({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -20,21 +21,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${nunito.className} antialiased bg-background`}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
+        <Provider>
           <div className="min-h-screen flex flex-col">
             <NavBar />
             <main className="flex-grow container mx-auto px-4 md:px-8">
               {children}
             </main>
+            <Toaster />
             <Footer />
           </div>
-          <Toaster />
-        </ThemeProvider>
+        </Provider>
       </body>
     </html>
   );
